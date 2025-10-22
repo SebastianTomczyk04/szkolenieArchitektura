@@ -15,4 +15,12 @@ public class Article {
     private ArticleContent articleContent;
     private ArticleCategory articleCategory;
     private LocalDateTime lastUpdatedAt;
+
+    public void updateArticle(ArticleTitle title, ArticleContent articleContent
+    ,ArticleCategory articleCategory, LocalDateTime lastUpdatedAt) {
+        this.title = title;
+        this.articleContent = articleContent;
+        this.articleCategory = articleCategory;
+        this.lastUpdatedAt = lastUpdatedAt;
+    }
 }
