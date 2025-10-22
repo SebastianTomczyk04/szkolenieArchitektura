@@ -8,4 +8,5 @@ import java.util.Optional;
 public interface ArticleRepository {
     Article update(Article article);
     Optional<Article> findById(Long articleId);
+    void save(Article article);
 }
