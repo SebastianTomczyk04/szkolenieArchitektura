@@ -20,12 +20,12 @@ public class UpdateArticleUseCase {
         this.articleRepository = articleRepository;
     }
 
-    public Article handle(Command updateArticle) {
+    public void handle(Command updateArticle) {
         Article articleToUpdate = findArticleToUpdate(updateArticle.getArticleId())
                 .orElseThrow(() ->
                         new ArticleNotFoundException("Article with id: " + updateArticle.getArticleId() + "not found."));
         articleToUpdate = updateArticle(articleToUpdate, updateArticle);
-        return articleRepository.update(articleToUpdate);
+        articleRepository.save(articleToUpdate);
     }
 
     private Optional<Article> findArticleToUpdate(Long articleId) {
